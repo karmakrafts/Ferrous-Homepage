@@ -1,0 +1,48 @@
+body {
+    height: 100%;
+    color: #EEEEEE;
+    font-family: 'Poppins', sans-serif;
+}
+
+p {
+    font-size: 1em;
+}
+
+.backgroundVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.landingContainer {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+.landingBoxContainer {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: fit-content;
+    padding: 32px;
+    border: solid #55AAEE 1px;
+    border-radius: 6px;
+    backdrop-filter: blur(12px);
+    box-shadow: rgba(28, 28, 28, 0.4) 5px 5px 12px;
+    background: rgba(0, 80, 120, 0.6);
+}
+
+.title {
+    font-size: 3em;
+}
+
+.title p {
+    font-size: inherit;
+    font-weight: bold;
+    display: inline;
+}

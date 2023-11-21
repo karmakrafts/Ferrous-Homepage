@@ -1,0 +1,13 @@
+stages:
+  - build
+build:
+  stage: build
+  script:
+    - cp *.html /var/www/ferrous
+    - cp -r images /var/www/ferrous
+    - cp -r css /var/www/ferrous
+  only:
+    - master
+  tags:
+    - linux
+

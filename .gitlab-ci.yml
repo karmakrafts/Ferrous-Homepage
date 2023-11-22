@@ -6,6 +6,7 @@ build:
     - cp *.html /var/www/ferrous
     - cp -rf images /var/www/ferrous
     - cp -rf css /var/www/ferrous
+    - cp -rf js /var/www/ferrous
   only:
     - master
   tags:

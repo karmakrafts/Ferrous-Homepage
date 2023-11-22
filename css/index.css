@@ -1,3 +1,8 @@
+html {
+    width: 100%;
+    height: 100%;
+}
+
 body {
     height: 100%;
     color: #EEEEEE;
@@ -11,7 +16,8 @@ p {
 }
 
 .backgroundVideo {
-    position: absolute;
+    z-index: -10;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -19,52 +25,137 @@ p {
     object-fit: cover;
 }
 
-.content {
+.headerContainer {
     display: flex;
-    position: fixed;
-    width: 100%;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     margin: 0;
     padding: 0;
 }
 
-.landingContainer {
-    display: flex;
-    position: fixed;
+.logo {
+    height: 12dvb;
+    margin-left: 1em;
+}
+
+.scrollContainer {
+    overflow-y: scroll;
+    overflow-x: hidden;
     width: 100%;
     height: 100%;
+    scroll-snap-type: y mandatory;
     margin: 0;
     padding: 0;
+}
+
+.landingPageContainer {
+    scroll-snap-align: center;
+    display: flex;
+    top: 50%;
+    width: 100%;
+    height: 100vh;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin: 0;
+    padding: 0;
 }
 
-.landingBoxContainer {
+.floatingContainer {
     display: flex;
-    align-self: center;
-    justify-self: center;
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    width: fit-content;
-    margin: 0;
-    padding: 32px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 2em;
+    border: solid #55AAEE 1px;
+    box-shadow: rgba(28, 28, 28, 0.4) 5px 5px 12px;
+    backdrop-filter: blur(16px);
+    background: rgba(0, 80, 140, 0.6);
+}
+
+.pageIconContainer {
+    display: flex;
+    flex-direction: row;
+    pointer-events: none;
+}
+
+.pageIconContainer > a {
+    color: #EEEEEE;
+    text-decoration: none;
+    pointer-events: auto;
+    width: 5vw;
+    height: 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 3vh;
+    margin: 1vw;
     border: solid #55AAEE 1px;
     border-radius: 6px;
-    backdrop-filter: blur(12px);
     box-shadow: rgba(28, 28, 28, 0.4) 5px 5px 12px;
-    background: rgba(0, 80, 120, 0.6);
+    backdrop-filter: blur(16px);
+    background: rgba(0, 80, 140, 0.6);
+    transform: scale(100%);
+    transition: transform .2s, background .2s;
+}
+
+.pageIconContainer > a:hover {
+    transform: scale(110%);
+    transition: transform .2s, background .2s;
+    background: linear-gradient(90deg, rgba(0,151,255,1.0) 0%, rgba(0,80,176,1.0) 100%);
+}
+
+.pageIconContainer:hover > a:not(:hover) {
+    transform: scale(90%);
+    transition: transform .2s, background .2s;
+    background: rgba(0, 80, 140, 1.0);
+}
+
+.backgroundContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 2em;
+    border: none;
+    backdrop-filter: blur(0px);
+    background: rgba(0, 80, 120, 0.0);
+    transition: backdrop-filter 0.125s, background-color 0.125s;
+}
+
+.backgroundContainer {
+    backdrop-filter: blur(16px);
+    background: rgba(0, 80, 120, 0.75);
+    transition: backdrop-filter 0.5s, background-color 0.5s;
+}
+
+.backgroundContainer > div {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    scroll-snap-align: center;
+}
+
+.titleContainer {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    margin-left: 1em;
+    justify-content: center;
 }
 
 .title {
+    margin: 0;
+    padding: 0;
     font-size: 3em;
-}
-
-.title p {
-    font-size: inherit;
-    font-weight: bold;
-    display: inline;
 }

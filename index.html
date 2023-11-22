@@ -7,27 +7,58 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,400;1,500&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" integrity="sha512-uKQ39gEGiyUJl4AI6L+ekBdGKpGw4xJ55+xyJG7YFlJokPNYegn9KwQ3P8A7aFQAUtUsAQHep+d/lrGqrbPIDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <!-- Background video -->
-    <video playsinline autoplay muted loop class="backgroundVideo">
-        <source src="images/background.webm" type="video/webm">
-    </video>
-    <!-- Actual body content -->
-    <div class="content">
-        <div class="landingContainer">
-            <div class="landingBoxContainer">
+<!-- Background video -->
+<video playsinline autoplay muted loop class="backgroundVideo">
+    <source src="images/background.webm" type="video/webm">
+</video>
+<div class="scrollContainer" id="scrollContainer">
+    <!-- Landing page -->
+    <div class="landingPageContainer" id="landingPageContainer">
+        <div class="floatingContainer">
+            <div class="headerContainer">
+                <img src="images/logo.svg" alt="Logo" class="logo"/>
                 <div class="titleContainer">
                     <div class="title">
-                        <p>Ferrous</p> Programming Language
+                        Ferrous
                     </div>
                     <p>A new perspective for object oriented programming</p>
                 </div>
             </div>
+        </div><br>
+        <div class="pageIconContainer">
+            <a target="_self" href="#whyPageContainer">
+                <i class="fa-solid fa-question fa-2xl"></i>
+                Why
+            </a>
+            <a target="_self" href="#tryPageContainer">
+                <i class="fa-solid fa-bolt-lightning fa-2xl"></i>
+                Try
+            </a>
+            <a target="_blank" href="https://docs.ferrouslang.org">
+                <i class="fa-solid fa-book-open fa-2xl"></i>
+                Docs
+            </a>
+            <a target="_blank" href="https://git.karmakrafts.dev/kk/ferrous-project">
+                <i class="fa-brands fa-git fa-2xl"></i>
+                Source
+            </a>
         </div>
-        <h2>Coming soon..</h2>
     </div>
+    <div class="backgroundContainer" id="backgroundContainer">
+        <div id="whyPageContainer">
+            <h1><b>Why</b> Ferrous?</h1>
+        </div>
+        <div id="tryPageContainer">
+            <h1><b>Try</b> Ferrous!</h1>
+        </div>
+    </div>
+</div>
 </body>
 </html>

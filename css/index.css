@@ -4,6 +4,7 @@ html {
 }
 
 body {
+    overflow: hidden; /* No duplicate scrollbar */
     height: 100%;
     color: #EEEEEE;
     font-family: 'Poppins', sans-serif;
@@ -13,6 +14,21 @@ body {
 
 p {
     font-size: 1em;
+}
+
+footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    padding: 0.5em;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 50, 120, 0.8);
+    backdrop-filter: blur(16px);
+    border: solid 0 #0088FF;
+    border-top-width: 1px;
 }
 
 .backgroundVideo {
@@ -47,6 +63,12 @@ p {
     scroll-snap-type: y mandatory;
     margin: 0;
     padding: 0;
+    scrollbar-width: none; /* Hide scrollbar on Firefox */
+}
+
+/* Works on Chrome, Edge, Opera, Safari etc. */
+.scrollContainer::-webkit-scrollbar {
+    display: none;
 }
 
 .landingPageContainer {
@@ -111,7 +133,7 @@ p {
 .pageIconContainer:hover > a:not(:hover) {
     transform: scale(90%);
     transition: transform .2s, background .2s;
-    background: rgba(0, 80, 140, 1.0);
+    background: linear-gradient(90deg, rgba(0,100,160,1.0) 0%, rgba(0,50,120,1.0) 100%);
 }
 
 .backgroundContainer {
@@ -122,15 +144,8 @@ p {
     margin: 0;
     padding: 2em;
     border: none;
-    backdrop-filter: blur(0px);
-    background: rgba(0, 80, 120, 0.0);
-    transition: backdrop-filter 0.125s, background-color 0.125s;
-}
-
-.backgroundContainer {
     backdrop-filter: blur(16px);
     background: rgba(0, 80, 120, 0.75);
-    transition: backdrop-filter 0.5s, background-color 0.5s;
 }
 
 .backgroundContainer > div {

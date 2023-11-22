@@ -9,9 +9,10 @@
           rel="stylesheet">
     <link rel="stylesheet" href="css/fontawesome.all.min.css"/>
     <script src="js/fontawesome.all.min.js" type="application/ecmascript"></script>
+    <script src="js/index.js" type="application/ecmascript"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>
+<body onload="init()">
 <div class="scrollContainer" id="scrollContainer">
     <!-- Background video -->
     <video autoplay muted loop class="backgroundVideo">
@@ -47,6 +48,10 @@
                 <i class="fa-brands fa-git fa-2xl"></i>
                 Source
             </a>
+            <a target="_blank" href="https://patreon.com/KitsuneAlex">
+                <i class="fa-brands fa-patreon fa-2xl"></i>
+                Donate
+            </a>
         </div>
     </div>
     <div class="backgroundContainer" id="backgroundContainer">
@@ -59,4 +64,7 @@
     </div>
 </div>
 </body>
+<footer>
+    Copyright &copy; 2023 Karma Krafts & associates
+</footer>
 </html>

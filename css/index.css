@@ -33,6 +33,7 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
     background: rgba(0, 50, 120, 0.8);
     backdrop-filter: blur(16px);
     border: solid 0 #0088FF;
@@ -140,6 +141,10 @@ footer a:hover {
     justify-content: center;
     text-align: center;
     align-items: center;
+    min-width: 32px;
+    min-height: 32px;
+    max-width: 64px;
+    max-height: 64px;
     padding: 3vh;
     margin: 1vw;
     border: solid #55AAEE 1px;
@@ -159,22 +164,6 @@ footer a:hover {
 .pageIconContainer p {
     margin: 0;
     padding: 0;
-}
-
-.pageIconContainer div:hover {
-    transform: scale(110%) rotate3d(0.5, 1.0, 0.5, 15deg);
-    transition: transform .3s, background-color .3s;
-    background: linear-gradient(90deg, rgba(0,151,255,1.0) 0%, rgba(0,80,176,1.0) 100%);
-}
-
-.pageIconContainer:hover div:not(:hover) {
-    transform: scale(90%) rotate3d(0, 1.0, 0, 180deg);
-    transition: transform .3s, background-color .3s;
-    background: linear-gradient(90deg, rgba(0,100,160,1.0) 0%, rgba(0,50,120,1.0) 100%);
-}
-
-.pageIconContainer:hover div:not(:hover) > * {
-    display: none;
 }
 
 .backgroundContainer {
@@ -216,21 +205,9 @@ footer a:hover {
     transition: letter-spacing .3s;
 }
 
-.headerContainer:hover {
-    pointer-events: none;
-    letter-spacing: 0.05vw;
-    transition: letter-spacing .3s;
-}
-
 .headerContainer > img {
     pointer-events: auto;
     transform: scale(100%);
-    transition: transform .3s;
-}
-
-.headerContainer > img:hover {
-    pointer-events: auto;
-    transform: scale(110%) rotate3d(1.0, 0.0, 0, 15deg) rotate3d(0.0, 1.0, 0, 15deg);
     transition: transform .3s;
 }
 
@@ -238,4 +215,34 @@ footer a:hover {
     margin: 0;
     padding: 0;
     font-size: 3em;
+}
+
+@media (hover: hover) {
+    .pageIconContainer div:hover {
+        transform: scale(110%) rotate3d(0.5, 1.0, 0.5, 15deg);
+        transition: transform .3s, background-color .3s;
+        background: linear-gradient(90deg, rgba(0,151,255,1.0) 0%, rgba(0,80,176,1.0) 100%);
+    }
+
+    .pageIconContainer:hover div:not(:hover) {
+        transform: scale(90%) rotate3d(0, 1.0, 0, 180deg);
+        transition: transform .3s, background-color .3s;
+        background: linear-gradient(90deg, rgba(0,100,160,1.0) 0%, rgba(0,50,120,1.0) 100%);
+    }
+
+    .pageIconContainer:hover div:not(:hover) > * {
+        display: none;
+    }
+
+    .headerContainer:hover {
+        pointer-events: none;
+        letter-spacing: 0.05vw;
+        transition: letter-spacing .3s;
+    }
+
+    .headerContainer > img:hover {
+        pointer-events: auto;
+        transform: scale(110%) rotate3d(1.0, 0.0, 0, 15deg) rotate3d(0.0, 1.0, 0, 15deg);
+        transition: transform .3s;
+    }
 }

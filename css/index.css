@@ -129,7 +129,7 @@ footer a:hover {
     pointer-events: none;
 }
 
-.pageIconContainer > div {
+.pageIconContainer div {
     color: #EEEEEE;
     text-decoration: none;
     pointer-events: auto;
@@ -151,28 +151,29 @@ footer a:hover {
     transition: transform .2s, background-color .2s;
 }
 
-.pageIconContainer > div * {
+.pageIconContainer * {
     color: #EEEEEE;
+    text-decoration: none;
 }
 
-.pageIconContainer > div p {
+.pageIconContainer p {
     margin: 0;
     padding: 0;
 }
 
-.pageIconContainer > div:hover {
+.pageIconContainer div:hover {
     transform: scale(110%) rotate3d(0.5, 1.0, 0.5, 15deg);
     transition: transform .3s, background-color .3s;
     background: linear-gradient(90deg, rgba(0,151,255,1.0) 0%, rgba(0,80,176,1.0) 100%);
 }
 
-.pageIconContainer:hover > div:not(:hover) {
+.pageIconContainer:hover div:not(:hover) {
     transform: scale(90%) rotate3d(0, 1.0, 0, 180deg);
     transition: transform .4s, background-color .3s;
     background: linear-gradient(90deg, rgba(0,100,160,1.0) 0%, rgba(0,50,120,1.0) 100%);
 }
 
-.pageIconContainer:hover > div:not(:hover) > * {
+.pageIconContainer:hover div:not(:hover) > * {
     display: none;
 }
 

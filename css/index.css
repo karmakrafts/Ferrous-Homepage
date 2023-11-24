@@ -58,11 +58,6 @@ footer a:hover {
     transition: color .125s;
 }
 
-.anchor {
-    margin: 0;
-    padding: 0;
-}
-
 .backgroundVideo {
     position: fixed;
     top: 0;

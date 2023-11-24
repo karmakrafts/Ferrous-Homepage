@@ -22,13 +22,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"
             integrity="sha512-uKQ39gEGiyUJl4AI6L+ekBdGKpGw4xJ55+xyJG7YFlJokPNYegn9KwQ3P8A7aFQAUtUsAQHep+d/lrGqrbPIDQ=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/navigation.js" type="application/ecmascript"></script>
 </head>
-<body>
+<body onload="init_nav()">
 <div class="scrollContainer" id="scrollContainer">
-    <!-- Background video -->
     <video class="backgroundVideo" loop muted autoplay playsinline>
-        <source src="//ferrouslang.org/images/background.webm" type="video/webm">
+        <source src="images/background.webm" type="video/webm">
     </video>
+    <div class="anchor" id="top"></div>
     <div class="backgroundContainer visible" id="backgroundContainer">
         <h1>Privacy Policy</h1>
         <p>Last updated: November 23, 2023</p>
@@ -336,10 +337,14 @@
         </a>
     </p>
 </footer>
+<!-- Floating controls -->
 <div class="floatingControls">
-    <button class="floatingButton">
-
-    </button>
+    <a class="floatingButton invisible" id="backToTopButton" href="#top">
+        <i class="fa-solid fa-arrow-up fa-2xl"></i>
+    </a>
+    <a class="floatingButton" target="_self" href="index.html">
+        <i class="fa-solid fa-arrow-left fa-2xl"></i>
+    </a>
 </div>
 </body>
 </html>

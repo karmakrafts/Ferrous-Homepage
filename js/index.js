@@ -9,18 +9,17 @@ function init() {
     const scrollContainer = document.getElementById('scrollContainer')
     const backgroundContainer = document.getElementById('backgroundContainer')
     let prevScrollTop = 0
-    scrollContainer.onscroll = () => {
+    scrollContainer.addEventListener('scroll', () => {
         const scrollTop = scrollContainer.scrollTop
-        if(scrollTop > prevScrollTop && scrollTop >= ((window.innerHeight / 3) << 1)) {
-            if(wasScrolledBefore) {
+        if (scrollTop > prevScrollTop && scrollTop >= ((window.innerHeight / 3) << 1)) {
+            if (wasScrolledBefore) {
                 prevScrollTop = scrollTop
                 return
             }
             backgroundContainer.classList.add('visible')
             wasScrolledBefore = true
-        }
-        else if(scrollTop < prevScrollTop && scrollTop <= window.innerHeight) {
-            if(!wasScrolledBefore) {
+        } else if (scrollTop < prevScrollTop && scrollTop <= window.innerHeight) {
+            if (!wasScrolledBefore) {
                 prevScrollTop = scrollTop
                 return
             }
@@ -28,5 +27,5 @@ function init() {
             wasScrolledBefore = false
         }
         prevScrollTop = scrollTop
-    }
+    });
 }

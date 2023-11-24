@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" id="top">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,15 +18,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" integrity="sha512-uKQ39gEGiyUJl4AI6L+ekBdGKpGw4xJ55+xyJG7YFlJokPNYegn9KwQ3P8A7aFQAUtUsAQHep+d/lrGqrbPIDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/navigation.js" type="application/ecmascript"></script>
     <script src="js/index.js" type="application/ecmascript"></script>
 </head>
-<body onload="init()">
+<body onload="init(); init_nav()">
 <div class="scrollContainer" id="scrollContainer">
-    <!-- Background video -->
     <video class="backgroundVideo" loop muted autoplay playsinline>
         <source src="images/background.webm" type="video/webm">
     </video>
-    <!-- Landing page -->
+    <div class="anchor" id="top"></div>
     <div class="landingPageContainer" id="landingPageContainer">
         <div class="floatingContainer">
             <div class="headerContainer">
@@ -40,13 +40,13 @@
             </div>
         </div><br>
         <div class="pageIconContainer">
-            <a target="_self" href="#whyPageContainer">
+            <a target="_self" href="#why">
                 <div>
                     <i class="fa-solid fa-question fa-2xl"></i>
                     <p>Why</p>
                 </div>
             </a>
-            <a target="_self" href="#tryPageContainer">
+            <a target="_self" href="#try">
                 <div>
                     <i class="fa-solid fa-bolt-lightning fa-2xl"></i>
                     <p>Try</p>
@@ -67,10 +67,10 @@
         </div>
     </div>
     <div class="backgroundContainer" id="backgroundContainer">
-        <div id="whyPageContainer">
+        <div id="why">
             <h1><b>Why</b> Ferrous?</h1>
         </div>
-        <div id="tryPageContainer">
+        <div id="try">
             <h1><b>Try</b> Ferrous!</h1>
         </div>
     </div>
@@ -91,5 +91,11 @@
         </a>
     </p>
 </footer>
+<!-- Floating controls -->
+<div class="floatingControls">
+    <a class="floatingButton invisible" id="backToTopButton" href="#top">
+        <i class="fa-solid fa-arrow-up fa-2xl"></i>
+    </a>
+</div>
 </body>
 </html>

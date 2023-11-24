@@ -58,6 +58,13 @@ footer a:hover {
     transition: color .125s;
 }
 
+.anchor {
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+}
+
 .backgroundVideo {
     position: fixed;
     top: 0;
@@ -257,6 +264,41 @@ footer a:hover {
     font-size: 3em;
 }
 
+.floatingControls {
+    width: fit-content;
+    bottom: 0;
+    left: 100%;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    padding: 2em 2em 6em;
+}
+
+.floatingButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #EEEEEE;
+    background: rgba(0,80,176,1.0);
+    min-width: 48px;
+    min-height: 48px;
+    width: 5vw;
+    height: 5vw;
+    max-width: 72px;
+    max-height: 72px;
+    margin: 6px;
+    border: solid rgba(0,151,255,1.0) 1px;
+    border-radius: 100%;
+    box-shadow: rgba(28, 28, 28, 0.7) 5px 5px 8px;
+    transform: scale(100%);
+    transition: color .1s, background-color .1s, border .1s, transform .2s;
+}
+
+.floatingButton.invisible {
+    transform: scale(0);
+    transition: transform .2s;
+}
+
 @media (hover: hover) {
     .pageIconContainer div:hover {
         transform: scale(110%) rotate3d(0.5, 1.0, 0.5, 15deg);
@@ -284,5 +326,12 @@ footer a:hover {
         pointer-events: auto;
         transform: scale(110%) rotate3d(1.0, 0.0, 0, 15deg) rotate3d(0.0, 1.0, 0, 15deg);
         transition: transform .3s;
+    }
+
+    .floatingButton:hover {
+        color: #111111;
+        background: #AACCFF;
+        border: solid #111111 1px;
+        transition: color .125s, background-color .125s, border .125s;
     }
 }

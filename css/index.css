@@ -174,8 +174,13 @@ footer a:hover {
     margin: 0;
     padding: 2em;
     border: none;
+    transition: backdrop-filter .2s, background .2s;
+}
+
+.backgroundContainer.visible {
     backdrop-filter: blur(16px);
     background: rgba(0, 80, 120, 0.75);
+    transition: backdrop-filter .5s, background .5s;
 }
 
 .backgroundContainer > div {

@@ -81,6 +81,7 @@ footer a:hover {
 .logo {
     height: 12dvb;
     margin-left: 1em;
+    filter: drop-shadow(5px 5px 8px rgb(0 0 0 / 0.4));
 }
 
 .scrollContainer {
@@ -122,7 +123,7 @@ footer a:hover {
     border: solid #55AAEE 1px;
     box-shadow: rgba(28, 28, 28, 0.4) 5px 5px 12px;
     backdrop-filter: blur(16px);
-    background: rgba(0, 80, 120, 0.4) url(/images/noise.png) repeat;
+    background: rgba(0, 60, 110, 0.6) url(/images/noise.png) repeat;
 }
 
 .pageIconContainer {
@@ -152,7 +153,7 @@ footer a:hover {
     border-radius: 6px;
     box-shadow: rgba(28, 28, 28, 0.4) 5px 5px 12px;
     backdrop-filter: blur(16px);
-    background: rgba(0, 80, 120, 0.4) url(/images/noise.png) repeat;
+    background: rgba(0, 60, 110, 0.6) url(/images/noise.png) repeat;
     transform: scale(100%);
     transition: transform .2s, background-color .2s;
 }
@@ -180,7 +181,7 @@ footer a:hover {
 
 .backgroundContainer.visible {
     backdrop-filter: blur(16px);
-    background: rgba(0, 80, 120, 0.4) url(/images/noise.png) repeat;
+    background: rgba(0, 60, 110, 0.6) url(/images/noise.png) repeat;
     transition: backdrop-filter .5s, background .5s;
 }
 
@@ -217,7 +218,7 @@ footer a:hover {
     border-style: solid;
     border-width: 0;
     border-bottom-width: 2px;
-    border-image: 1 linear-gradient(90deg, rgba(0,151,255,1.0) 0%, rgba(180,180,180,1.0) 100%);
+    border-image: 1 linear-gradient(90deg, rgba(0,151,255,1.0) 0%, rgba(220,220,220,1.0) 100%);
 }
 
 .backgroundContainer a {

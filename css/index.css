@@ -34,7 +34,7 @@ footer {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: rgba(0, 50, 120, 0.8);
+    background: rgba(0, 50, 100, 0.9);
     backdrop-filter: blur(16px);
     border: solid 0 #0088FF;
     border-top-width: 1px;
@@ -189,6 +189,41 @@ footer a:hover {
     margin: 0;
     padding: 0;
     scroll-snap-align: center;
+}
+
+.backgroundContainer h1 {
+    text-align: center;
+    width: fit-content;
+    border: solid #EEEEEE 1px;
+    border-radius: 4px;
+    padding: 0.5em;
+    background: linear-gradient(90deg, rgba(0,151,255,1.0) 0%, rgba(0,80,176,1.0) 100%);
+    box-shadow: rgba(28, 28, 28, 0.4) 5px 5px 12px;
+}
+
+.backgroundContainer h2 {
+    padding-bottom: 8px;
+    text-align: center;
+    width: 100%;
+}
+
+.gradientUnderline, .backgroundContainer h2 {
+    border-style: solid;
+    border-width: 0;
+    border-bottom-width: 2px;
+    border-image: 1 linear-gradient(90deg, rgba(0,151,255,1.0) 0%, rgba(180,180,180,1.0) 100%);
+}
+
+.backgroundContainer a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #AACCFF;
+    transition: color .125s;
+}
+
+.backgroundContainer a:hover {
+    color: #00AAFF;
+    transition: color .125s;
 }
 
 .titleContainer {

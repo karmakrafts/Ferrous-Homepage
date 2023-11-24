@@ -4,6 +4,7 @@
  */
 
 html {
+    scroll-behavior: smooth;
     display: flex;
     flex-direction: column;
     overflow: hidden; /* No duplicate scrollbar */
@@ -83,6 +84,7 @@ footer a:hover {
 }
 
 .scrollContainer {
+    scroll-behavior: smooth;
     overflow-y: scroll;
     overflow-x: hidden;
     width: 100%;

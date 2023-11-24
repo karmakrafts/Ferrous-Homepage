@@ -290,13 +290,13 @@ footer a:hover {
     border: solid rgba(0,151,255,1.0) 1px;
     border-radius: 100%;
     box-shadow: rgba(28, 28, 28, 0.7) 5px 5px 8px;
-    transform: scale(100%);
-    transition: color .1s, background-color .1s, border .1s, transform .2s;
+    transform: rotate3d(0, 0, 0, 0deg) scale(100%);
+    transition: color .1s, background-color .1s, border .1s, transform .125s;
 }
 
 .floatingButton.invisible {
-    transform: scale(0);
-    transition: transform .2s;
+    transform: rotate3d(1.0, 1.0, 1.0, 180deg) scale(0);
+    transition: transform .25s;
 }
 
 @media (hover: hover) {

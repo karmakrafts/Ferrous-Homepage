@@ -289,7 +289,7 @@ footer a:hover {
 
 .floatingButton.invisible {
     transform: rotate3d(1.0, 1.0, 1.0, 180deg) scale(0);
-    transition: transform .25s;
+    transition: color .1s, background-color .1s, border .1s, transform .125s;
 }
 
 @media (hover: hover) {
@@ -325,6 +325,6 @@ footer a:hover {
         color: #111111;
         background: #AACCFF;
         border: solid #111111 1px;
-        transition: color .125s, background-color .125s, border .125s;
+        transition: color .1s, background-color .1s, border .1s, transform .125s;
     }
 }

@@ -9,6 +9,7 @@ function init() {
     const scrollContainer = document.getElementById('scrollContainer')
     const backgroundContainer = document.getElementById('backgroundContainer')
     let prevScrollTop = 0
+
     scrollContainer.addEventListener('scroll', () => {
         const scrollTop = scrollContainer.scrollTop
         if (scrollTop > prevScrollTop && scrollTop >= ((window.innerHeight / 3) << 1)) {
@@ -29,3 +30,5 @@ function init() {
         prevScrollTop = scrollTop
     });
 }
+
+init()

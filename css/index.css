@@ -59,6 +59,7 @@ footer a:hover {
 }
 
 .backgroundVideo {
+    z-index: -1;
     position: fixed;
     top: 0;
     left: 0;
@@ -92,13 +93,15 @@ footer a:hover {
     scroll-snap-type: y mandatory;
     margin: 0;
     padding: 0;
-    scrollbar-width: none; /* Hide scrollbar on Firefox */
+    scrollbar-color: #303850 #121822;
 }
 
-/* Works on Chrome, Edge, Opera, Safari etc. */
 .scrollContainer::-webkit-scrollbar {
-    -webkit-appearance: none; /* Fix on mobile */
-    display: none;
+    background: #121822;
+}
+
+.scrollContainer::-webkit-scrollbar-thumb {
+    background: #303850;
 }
 
 .landingPageContainer {

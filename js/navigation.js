@@ -3,7 +3,7 @@
  * @since 24/11/2023
  */
 
-function init_nav() {
+function init() {
     const scrollContainer = document.getElementById('scrollContainer')
     const backToTopButton = document.getElementById('backToTopButton')
     scrollContainer.addEventListener('scroll', () => {
@@ -22,3 +22,5 @@ function init_nav() {
         }
     });
 }
+
+init()

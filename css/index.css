@@ -4,6 +4,7 @@
  */
 
 html {
+    background-color: transparent;
     scroll-behavior: smooth;
     display: flex;
     flex-direction: column;
@@ -15,6 +16,7 @@ html {
 body {
     overflow: hidden; /* No duplicate scrollbar */
     height: 100%;
+    background-color: transparent;
     color: #EEEEEE;
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -58,11 +60,21 @@ footer a:hover {
     transition: color .125s;
 }
 
-.backgroundVideo {
+.backgroundVideoContainer {
+    background-image: url("/images/background.jpg");
+    background-color: #121822;
+    background-size: cover;
     z-index: -1;
+    width: 100%;
+    height: 100%;
     position: fixed;
     top: 0;
     left: 0;
+}
+
+.backgroundVideo {
+    z-index: -1;
+    background-color: transparent;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -85,6 +97,7 @@ footer a:hover {
 }
 
 .scrollContainer {
+    background-color: transparent;
     scroll-behavior: smooth;
     overflow-y: scroll;
     overflow-x: hidden;

@@ -23,14 +23,11 @@
             integrity="sha512-uKQ39gEGiyUJl4AI6L+ekBdGKpGw4xJ55+xyJG7YFlJokPNYegn9KwQ3P8A7aFQAUtUsAQHep+d/lrGqrbPIDQ=="
             crossorigin="anonymous" referrerpolicy="no-referrer" async defer></script>
     <script src="js/navigation.js" type="application/ecmascript" async defer></script>
+    <script src="js/background.js" type="application/ecmascript" async defer></script>
 </head>
 <body>
+<canvas class="background" id="background" width="1920" height="1080"></canvas>
 <div class="scrollContainer" id="scrollContainer">
-    <div class="backgroundVideoContainer">
-        <video src="images/background.webm"
-               playsinline loop muted autoplay class="backgroundVideo">
-        </video>
-    </div>
     <div class="backgroundContainer visible" id="backgroundContainer">
         <div class="nofit">
             <h1>Privacy Policy</h1>

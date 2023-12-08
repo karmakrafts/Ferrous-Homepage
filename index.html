@@ -22,14 +22,11 @@
             crossorigin="anonymous" referrerpolicy="no-referrer" async defer></script>
     <script src="js/navigation.js" type="application/ecmascript" async defer></script>
     <script src="js/index.js" type="application/ecmascript" async defer></script>
+    <script src="js/background.js" type="application/ecmascript" async defer></script>
 </head>
 <body>
+<canvas class="background" id="background" width="1920" height="1080"></canvas>
 <div class="scrollContainer" id="scrollContainer">
-    <div class="backgroundVideoContainer">
-        <video src="images/background.webm"
-               playsinline loop muted autoplay class="backgroundVideo">
-        </video>
-    </div>
     <div class="landingPageContainer" id="landingPageContainer">
         <div class="floatingContainer">
             <div class="headerContainer">

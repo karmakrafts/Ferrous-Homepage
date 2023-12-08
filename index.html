@@ -17,7 +17,9 @@
           rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" integrity="sha512-uKQ39gEGiyUJl4AI6L+ekBdGKpGw4xJ55+xyJG7YFlJokPNYegn9KwQ3P8A7aFQAUtUsAQHep+d/lrGqrbPIDQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"
+            integrity="sha512-uKQ39gEGiyUJl4AI6L+ekBdGKpGw4xJ55+xyJG7YFlJokPNYegn9KwQ3P8A7aFQAUtUsAQHep+d/lrGqrbPIDQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" async defer></script>
     <script src="js/navigation.js" type="application/ecmascript" async defer></script>
     <script src="js/index.js" type="application/ecmascript" async defer></script>
 </head>
@@ -70,18 +72,50 @@
     <div class="backgroundContainer" id="backgroundContainer">
         <div id="why">
             <h1>Why Ferrous?</h1>
+            <div class="lineColumnsContainer">
+                <div class="lineColumn">
+                    <div class="linePoint linePointLeft">
+                        <i class="fa-solid fa-cubes-stacked"></i>
+                    </div>
+                    <div class="linePoint linePointLeft">
+                    </div>
+                    <div class="linePoint linePointLeft">
+                        <i class="fa-solid fa-dragon"></i>
+                    </div>
+                    <div class="linePoint linePointLeft">
+                    </div>
+                    <div class="linePoint linePointLeft">
+                        <i class="fa-solid fa-memory"></i>
+                    </div>
+                    <div class="linePoint linePointLeft">
+                    </div>
+                </div>
+                <div class="lineColumn line" id="line"></div>
+                <div class="lineColumn">
+                    <div class="linePoint linePointRight">
+                    </div>
+                    <div class="linePoint linePointRight">
+                        <i class="fa-solid fa-florin-sign"></i>
+                    </div>
+                    <div class="linePoint linePointRight">
+                    </div>
+                    <div class="linePoint linePointRight">
+                        <i class="fa-brands fa-osi"></i>
+                    </div>
+                    <div class="linePoint linePointRight">
+                    </div>
+                    <div class="linePoint linePointRight">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+                </div>
+            </div>
         </div>
         <div id="try">
             <h1>Try Ferrous!</h1>
         </div>
     </div>
     <footer>
-        <p>Copyright &copy; 2023 Karma Krafts & associates</p>
         <p>
-            <a target="_blank" href="https://git.karmakrafts.dev/kk/ferrous-project/ferrous-homepage">
-                <i class="fa-brands fa-gitlab"></i> Source
-            </a>
-            |
             <a target="_blank" href="https://git.karmakrafts.dev/kk/ferrous-project/ferrous-homepage/issues">
                 <i class="fa-brands fa-gitlab"></i> Report Issue
             </a>
@@ -89,7 +123,12 @@
             <a target="_self" href="privacy_policy.html">
                 <i class="fa-solid fa-file-lines"></i> Privacy Policy
             </a>
+            |
+            <a target="_self" href="legal_notice.html">
+                <i class="fa-solid fa-file-lines"></i> Legal Notice
+            </a>
         </p>
+        <p>Copyright &copy; 2023 Karma Krafts & associates</p>
     </footer>
 </div>
 <!-- Floating controls -->

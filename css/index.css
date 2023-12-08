@@ -200,7 +200,7 @@ footer a:hover {
     transition: backdrop-filter .5s, background .5s;
 }
 
-.backgroundContainer > div {
+.backgroundContainer > div:not(.nofit) {
     position: relative;
     display: flex;
     width: 100%;
@@ -213,14 +213,25 @@ footer a:hover {
     scroll-snap-align: center;
 }
 
+.nofit {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
 .backgroundContainer h1 {
-    text-align: center;
     width: fit-content;
+    text-align: center;
     border: solid #EEEEEE 1px;
     border-radius: 4px;
     padding: 0.5em;
     background: rgba(28, 28, 28, 0.3);
     box-shadow: rgba(28, 28, 28, 0.3) 5px 5px 12px;
+    transition: width 10s;
 }
 
 .backgroundContainer h2 {
@@ -296,7 +307,7 @@ footer a:hover {
     height: 5vw;
     max-width: 72px;
     max-height: 72px;
-    margin: 6px;
+    margin: 4px 2em 4px 4px;
     border: solid rgba(0,151,255,1.0) 1px;
     border-radius: 100%;
     box-shadow: rgba(28, 28, 28, 0.7) 5px 5px 8px;
@@ -309,39 +320,123 @@ footer a:hover {
     transition: color .1s, background-color .1s, border .1s, transform .125s;
 }
 
+.lineColumnsContainer {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.lineColumn {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.line {
+    position: static;
+    height: 1px;
+    width: 2px;
+    border: 0 solid;
+    border-left-width: 2px;
+    border-image: 1 linear-gradient(0deg, rgba(0,151,255,1.0) 0%, rgba(220,220,220,1.0) 100%);
+    transition: height 1s;
+}
+
+.line.expanded {
+    height: 100%;
+    transition: height 2s;
+}
+
+.linePoint {
+    font-size: 20pt;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    transition: font-size 1s;
+    filter: drop-shadow(5px 5px 2px rgb(0 0 0 / 0.4));
+}
+
+.linePoint.linePointLeft {
+    justify-content: flex-end;
+    align-items: center;
+    text-align: right;
+    margin-right: 2em;
+}
+
+.linePoint.linePointRight {
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
+    margin-left: 2em;
+}
+
+.linePoint.scaled {
+    width: 100%;
+    font-size: 40pt;
+    transition: font-size 1s;
+    animation: lineIcon 3s alternate infinite;
+}
+
+.linePoint.scaled:nth-of-type(1) {
+    animation-delay: 2s;
+}
+
+.linePoint.scaled:nth-of-type(2) {
+    animation-delay: 1s;
+}
+
+.linePoint.scaled:nth-of-type(5) {
+    animation-delay: 1.444s;
+}
+
+@keyframes lineIcon {
+    from {
+        transform: rotate3d(1.0, 0.0, 1.0, -2deg) translateY(0px);
+    }
+    to {
+        transform: rotate3d(1.0, 0.0, 1.0, 2deg) translateY(8px);
+    }
+}
+
 @media (hover: hover) {
     .pageIconContainer div:hover {
         transform: scale(110%) rotate3d(0.5, 1.0, 0.5, 15deg);
-        transition: transform .3s, background-color .3s;
+        transition: transform .4s, background .4s;
         background: linear-gradient(90deg, rgba(0,151,255,1.0) 0%, rgba(0,80,176,1.0) 100%);
     }
 
     .pageIconContainer:hover div:not(:hover) {
         transform: scale(90%) rotate3d(0, 1.0, 0, 180deg);
-        transition: transform .3s, background-color .3s;
+        transition: transform .4s, background .4s;
         background: linear-gradient(90deg, rgba(0,100,160,1.0) 0%, rgba(0,50,120,1.0) 100%);
     }
 
     .pageIconContainer:hover div:not(:hover) > * {
         display: none;
+        transition: visibility .4s;
     }
 
     .headerContainer:hover {
         pointer-events: none;
         letter-spacing: 0.05vw;
-        transition: letter-spacing .3s;
+        transition: letter-spacing .4s;
     }
 
     .headerContainer > img:hover {
         pointer-events: auto;
         transform: scale(110%) rotate3d(1.0, 0.0, 0, 15deg) rotate3d(0.0, 1.0, 0, 15deg);
-        transition: transform .3s;
+        transition: transform .4s;
     }
 
     .floatingButton:hover {
         color: #111111;
         background: #AACCFF;
         border: solid #111111 1px;
-        transition: color .1s, background-color .1s, border .1s, transform .125s;
+        transition: color .1s, background .1s, border .1s, transform .125s;
     }
 }

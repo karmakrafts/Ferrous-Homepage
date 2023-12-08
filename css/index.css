@@ -378,12 +378,6 @@ footer a:hover {
     background: rgba(0,60,146,0.7);
 }
 
-.linePointIcon:hover {
-    background: rgba(0,80,176,1.0);
-    transform: scale(1.2);
-    transition: transform .3s, background-color .3s;
-}
-
 .linePoint.linePointLeft {
     justify-content: flex-end;
     align-items: center;
@@ -462,4 +456,11 @@ footer a:hover {
         border: solid #111111 1px;
         transition: color .1s, background .1s, border .1s, transform .125s;
     }
+
+    .linePointIcon:hover {
+        background: rgba(0,80,176,1.0);
+        transform: scale(1.2);
+        transition: transform .3s, background-color .3s;
+    }
+
 }

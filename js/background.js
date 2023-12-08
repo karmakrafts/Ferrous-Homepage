@@ -13,9 +13,8 @@ const vertexShader = `
     }
 `.replaceAll('\s+', '\n')
 
+//Originally written by srtuss. Modified by Vlad & Alexander Hinze.
 const fragmentShader = `
-    //Originally written by srtuss. Modified by Vlad.
-
 #ifdef GL_ES
 precision highp float;
 #endif
@@ -23,8 +22,6 @@ precision highp float;
 uniform float time;
 uniform vec2 mouse;
 uniform vec2 resolution;
-
-const float fog_density = .09;
 
 vec2 rand22(in vec2 p){
     return fract(vec2(sin(p.x * 12591.32 + p.y * 254.077), cos(p.x * 391.32 + p.y * 49.077)));
@@ -64,8 +61,6 @@ vec3 voronoi(in vec2 x) {
     return vec3(n + mg, md2 - md);
 }
 
-#define A2V(a) vec2(sin((a) * 6.28318531 / 100.0), cos((a) * 6.28318531 / 100.0))
-
 vec2 rotate(vec2 p, float a){
     return vec2(p.x * cos(a) - p.y * cos(a), p.x * tan(a) + p.y * cos(a));
 }
@@ -83,8 +78,6 @@ void main(void)
     vec2 uv = gl_FragCoord.xy / resolution.xy;
     uv = uv * 5.0 - 2.0;
     uv.x *= resolution.x / resolution.y;
-
-
     // ray origin
     vec3 ro = vec3(20, 10.0, time * 0.0);
     ro.y = 0.0;
@@ -92,38 +85,22 @@ void main(void)
     vec3 ta = vec3(80.0, 180.0, 5.0);
 
     vec3 ww = normalize(ro - ta);
-    vec3 uu = normalize(cross(ww, normalize(vec3(0.0, 10, 0.0))));
+    vec3 uu = normalize(cross(ww, normalize(vec3(0.0, 2, 0.0))));
     vec3 vv = normalize(cross(uu, ww));
     // obtain ray direction
     vec3 rd = normalize(uv.x * uu + uv.y * vv + 1.0 * ww);
-
-    vec3 its;
-    float v, g;
     vec3 inten = vec3(0.0);
-
     // voronoi floor layers
-    for (int i = 0; i < 2; i ++)
-    {
+    for (int i = 0; i < 2; i++){
         float layer = float(i);
-        its = intersect(ro, rd, vec3(0.0, -5.0 - layer * 5.0, 0.0), vec3(1.0, 0.0, 0.0), vec3(0.0, 0.0, 1.0));
-        if (its.x > 0.5)
-        {
-            vec3 vo = voronoi((its.yz + time*2.0) * .06 + 8.0 * rand21(float(i)));
-            v = exp(-100.0 * (vo.z - 0.02));
-
-            float fx = 0.0;
-
-            // add some special fx to lowest layer
-            if (i == 16)
-            {
-                float crd = fract(time * 0.2) * 50.0 - 25.0;
-                float fxi = cos(vo.x * 0.2 + time * 2.5);//abs(crd - vo.x);
-                fx = clamp(smoothstep(0.9, 1.0, fxi), 0.5, 0.9) * 1.0 * rand12(vo.xy);
-                fx *= exp(-3.0 * vo.z) * 2.0;
+        vec3 its = intersect(ro, rd, vec3(0.0, -4.0 - layer * 8.0, 0.0), vec3(1.2, 0.0, 0.0), vec3(0.0, 0.0, 1.2));
+        if (its.x > 0.5){
+            vec3 vo = voronoi((its.yz + time*4.333) * .07 + 20.0 * rand21(layer));
+            float v = exp(-100.0 * (vo.z - 0.01 * (1.2 * (layer + 1.2))));
+            if (mod(float(i), 2.0) < 2.0) {
+                inten.b += v * 0.01 + v*v;
+                inten.g += v * 0.001 + v / 10.0;
             }
-            if (mod(float(i), 2.0) < 2.0)
-            inten.b += v * 0.1 + fx + v*v;
-            inten.g += v * 0.01 + fx + v / 10.0;
         }
     }
 

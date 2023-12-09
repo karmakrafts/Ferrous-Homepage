@@ -73,38 +73,25 @@ vec3 intersect(in vec3 o, in vec3 d, vec3 c, vec3 u, vec3 v){
     dot(cross(v, q), d)) / dot(cross(v, u), d);
 }
 
-void main(void)
-{
+void main(void) {
     vec2 uv = gl_FragCoord.xy / resolution.xy;
     uv = uv * 5.0 - 2.0;
     uv.x *= resolution.x / resolution.y;
-    // ray origin
-    vec3 ro = vec3(20, 10.0, time * 0.0);
-    ro.y = 0.0;
-    // camera look at
-    vec3 ta = vec3(80.0, 180.0, 5.0);
-
+    vec3 ro = vec3(20, 0.0, time * 0.0);
+    vec3 ta = vec3(80.0,220.0, 5.0);
     vec3 ww = normalize(ro - ta);
-    vec3 uu = normalize(cross(ww, normalize(vec3(0.0, 2, 0.0))));
+    vec3 uu = normalize(cross(ww, normalize(vec3(0.0, 3.0, 0.0))));
     vec3 vv = normalize(cross(uu, ww));
-    // obtain ray direction
     vec3 rd = normalize(uv.x * uu + uv.y * vv + 1.0 * ww);
     vec3 inten = vec3(0.0);
-    // voronoi floor layers
-    for (int i = 0; i < 2; i++){
-        float layer = float(i);
-        vec3 its = intersect(ro, rd, vec3(0.0, -4.0 - layer * 8.0, 0.0), vec3(1.2, 0.0, 0.0), vec3(0.0, 0.0, 1.2));
-        if (its.x > 0.5){
-            vec3 vo = voronoi((its.yz + time*4.333) * .07 + 20.0 * rand21(layer));
-            float v = exp(-100.0 * (vo.z - 0.01 * (1.2 * (layer + 1.2))));
-            if (mod(float(i), 2.0) < 2.0) {
-                inten.b += v * 0.01 + v*v;
-                inten.g += v * 0.001 + v / 10.0;
-            }
-        }
+    vec3 its = intersect(ro, rd, vec3(0.0, -8.0 * 8.0, 0.0), vec3(1.0, 0.0, 0.0), vec3(0.0, 0.0, 1.0));
+    if (its.x > 0.5) {
+        vec3 vo = voronoi((its.yz + time * 6.0) * .01 + 20.0 * rand21(0.0));
+        float v = exp(-100.0 * (vo.z - 0.03));
+        inten.b += v / 4.0;
+        inten.g += 0.1 + v / 8.0;
     }
-
-    vec3 col = pow(vec3(inten.r, inten.g + 0.0025, inten.b + 0.05), 0.5 * vec3(cos(time*0.0)/6.0+0.33));//pow(base color, glow amount)
+    vec3 col = pow(inten, vec3(1.4)) + vec3(0.0, 0.2, 0.4);
     gl_FragColor = vec4(col, 1.0);
 }
 `.replaceAll('\s+', '\n')
@@ -197,4 +184,4 @@ function update_background() {
 }
 
 setup_background()
-setInterval(update_background, 33.333)
+setInterval(update_background, 16.666)

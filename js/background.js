@@ -19,6 +19,8 @@ const fragmentShader = `
 precision highp float;
 #endif
 
+const int NUM_PASSES = 2;
+
 uniform float time;
 uniform vec2 mouse;
 uniform vec2 resolution;
@@ -84,15 +86,17 @@ void main(void) {
     vec3 vv = normalize(cross(uu, ww));
     vec3 rd = normalize(uv.x * uu + uv.y * vv + 1.0 * ww);
     vec3 inten = vec3(0.0);
-    vec3 its = intersect(ro, rd, vec3(0.0, -8.0 * 8.0, 0.0), vec3(1.0, 0.0, 0.0), vec3(0.0, 0.0, 1.0));
-    if (its.x > 0.5) {
-        vec3 vo = voronoi((its.yz + time * 6.0) * .01 + 20.0 * rand21(0.0));
-        float v = exp(-100.0 * (vo.z - 0.03));
-        inten.b += v / 4.0;
-        inten.g += 0.1 + v / 8.0;
+    for(int i = 0; i < NUM_PASSES; i++) {
+        vec3 its = intersect(ro, rd, vec3(0.0, -16.0 - float(i) * 48.0, 0.0), vec3(1.0, 0.0, 0.0), vec3(0.0, 0.0, 1.0));
+        if (its.x > 0.5) {
+            vec3 vo = voronoi((its.yz + time * 6.0) * .01 + 20.0 * rand21(0.0));
+            float v = exp(-100.0 * (vo.z - 0.03));
+            inten.b += v / 4.0;
+            inten.g += 0.1 + v / 8.0;
+            inten *= (1.0 / float(NUM_PASSES));
+        }
     }
-    vec3 col = pow(inten, vec3(1.4)) + vec3(0.0, 0.2, 0.4);
-    gl_FragColor = vec4(col, 1.0);
+    gl_FragColor = vec4(pow(inten, vec3(1.4)) + vec3(0.0, 0.2, 0.4), 1.0);
 }
 `.replaceAll('\s+', '\n')
 

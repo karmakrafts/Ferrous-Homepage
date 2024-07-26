@@ -188,4 +188,4 @@ function update_background() {
 }
 
 setup_background()
-setInterval(update_background, 16.666)
+setInterval(update_background, 33.333)
